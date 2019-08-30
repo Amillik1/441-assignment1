@@ -29,12 +29,23 @@
             android:textColor="#000000"/>
 
         <EditText
+            android:id="@+id/height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"
             android:background="#FFFFFF"
-            android:hint="Enter your height"
+            android:hint="Enter your height in inches"
             android:inputType="text" />
+
+        <Spinner
+            android:id="@+id/object"
+            android:background="#FFFFFF"
+            android:layout_marginTop="10sp"
+            android:spinnerMode="dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
 
         <Button
             android:layout_width="match_parent"
@@ -49,10 +60,52 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Hello World!"
+            android:textAlignment="center"
+            android:text="Result:"
+            android:textColor="#000000"
             android:shadowColor = "#001"
             android:textSize="48sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="200sp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your height in"
+                    android:textColor="#000000"
+                    android:textSize="30sp"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="[object];"
+                    android:textColor="#000000"
+                    android:textSize="30sp"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="height"
+                    android:textColor="#000000"
+                    android:textSize="30sp"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:src = "@drawable/paper"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
