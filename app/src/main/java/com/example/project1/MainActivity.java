@@ -8,7 +8,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
-    String[] objects = {"Sheets of paper", "Cans of soda"};
+    String[] objects = {"Choose an object to measure to", "Sheets of paper", "Cans of soda"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
