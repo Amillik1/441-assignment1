@@ -79,30 +79,39 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="150sp"
                     android:text="Your height in"
                     android:textColor="#000000"
                     android:textSize="30sp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:visibility="invisible"
+                    android:id="@+id/txtTitle"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="[object];"
+                    android:text="[object]:"
                     android:textColor="#000000"
                     android:textSize="30sp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:visibility="invisible"
+                    android:id="@+id/objAnswer"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="height"
                     android:textColor="#000000"
                     android:textSize="30sp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center"
+                    android:visibility="invisible"
+                    android:id="@+id/txtAnswer"/>
             </LinearLayout>
 
             <ImageView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
-                android:src = "@drawable/paper"/>
+                android:src = "@drawable/paper"
+                android:visibility="invisible"
+                android:id = "@+id/outputImage"/>
 
         </LinearLayout>
 
