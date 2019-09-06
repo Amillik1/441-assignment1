@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
-    String[] objects = {"Choose an object to measure to", "Sheets of paper", "Cans of soda", "Army men"};
+    String[] objects = {"Choose an object to measure to", "Sheets of paper", "Cans of soda", "Army men", "Cucumber", "Dollars"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +80,30 @@ public class MainActivity extends AppCompatActivity {
                     }
                     txtAnswer.setText(df.format(answer/2));
                     image.setImageResource(R.drawable.army);
+
+                }
+                if (spinner.getSelectedItem() == "Cucumber"){
+                    objAnswer.setText("Cucumber:");
+                    double answer = 0;
+                    try {
+                        answer = Double.parseDouble(height.getText().toString());
+                    }catch (Exception e){
+                        idiot = 1;
+                    }
+                    txtAnswer.setText(df.format(answer/67));
+                    image.setImageResource(R.drawable.cucumber);
+
+                }
+                if (spinner.getSelectedItem() == "Dollars"){
+                    objAnswer.setText("Dollars:");
+                    double answer = 0;
+                    try {
+                        answer = Double.parseDouble(height.getText().toString());
+                    }catch (Exception e){
+                        idiot = 1;
+                    }
+                    txtAnswer.setText(df.format(answer/6.14));
+                    image.setImageResource(R.drawable.dollar);
 
                 }
                 if (spinner.getSelectedItem() == "Choose an object to measure to" || idiot == 1){
