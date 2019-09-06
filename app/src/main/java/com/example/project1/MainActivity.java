@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
-    String[] objects = {"Choose an object to measure to", "Sheets of paper", "Cans of soda", "Army men", "Cucumber", "Dollars"};
+    String[] objects = {"Choose an object to measure to", "Sheets of paper", "Cans of soda", "Army men", "Cucumber", "Dollars", "Rickarum", "Pizza boxes"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        final DecimalFormat df = new DecimalFormat("0.0");
+        final DecimalFormat df = new DecimalFormat("0.00");
         final TextView height = findViewById(R.id.height);
 
         final TextView txtTitle = findViewById(R.id.txtTitle);
@@ -104,7 +104,28 @@ public class MainActivity extends AppCompatActivity {
                     }
                     txtAnswer.setText(df.format(answer/6.14));
                     image.setImageResource(R.drawable.dollar);
-
+                }
+                if (spinner.getSelectedItem() == "Rickarum"){
+                    objAnswer.setText("Ikea lamps:");
+                    double answer = 0;
+                    try {
+                        answer = Double.parseDouble(height.getText().toString());
+                    }catch (Exception e){
+                        idiot = 1;
+                    }
+                    txtAnswer.setText(df.format(answer/23));
+                    image.setImageResource(R.drawable.rickarum);
+                }
+                if (spinner.getSelectedItem() == "Pizza boxes"){
+                    objAnswer.setText("Pizza boxes:");
+                    double answer = 0;
+                    try {
+                        answer = Double.parseDouble(height.getText().toString());
+                    }catch (Exception e){
+                        idiot = 1;
+                    }
+                    txtAnswer.setText(df.format(answer/1.75));
+                    image.setImageResource(R.drawable.pizza);
                 }
                 if (spinner.getSelectedItem() == "Choose an object to measure to" || idiot == 1){
                     objAnswer.setText("Idiots:");
