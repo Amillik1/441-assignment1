@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
-    String[] objects = {"Choose an object to measure to", "Sheets of paper", "Cans of soda"};
+    String[] objects = {"Choose an object to measure to", "Sheets of paper", "Cans of soda", "Army men"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,22 +41,53 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick (View v){
                 //do stuff
+                int idiot = 0;
                 txtTitle.setVisibility(View.VISIBLE);
                 objAnswer.setVisibility(View.VISIBLE);
                 txtAnswer.setVisibility(View.VISIBLE);
                 image.setVisibility(View.VISIBLE);
-                if (spinner.getSelectedItem() == "Choose an object to measure to"){
-                    objAnswer.setText("Idiots:");
-                    txtAnswer.setText("1");
-                    image.setImageResource(R.drawable.idiot);
-                }
                 if (spinner.getSelectedItem() == "Sheets of paper"){
                     objAnswer.setText("Sheets of paper:");
-                    double answer = Double.parseDouble(height.getText().toString());
+                    double answer = 0;
+                    try {
+                        answer = Double.parseDouble(height.getText().toString());
+                    }catch (Exception e){
+                        idiot = 1;
+                    }
                     txtAnswer.setText(df.format(answer/11));
                     image.setImageResource(R.drawable.paper);
 
                 }
+                if (spinner.getSelectedItem() == "Cans of soda"){
+                    objAnswer.setText("Cans of soda:");
+                    double answer = 0;
+                    try {
+                        answer = Double.parseDouble(height.getText().toString());
+                    }catch (Exception e){
+                        idiot = 1;
+                    }
+                    txtAnswer.setText(df.format(answer/4.83));
+                    image.setImageResource(R.drawable.soda);
+
+                }
+                if (spinner.getSelectedItem() == "Army men"){
+                    objAnswer.setText("Army men:");
+                    double answer = 0;
+                    try {
+                        answer = Double.parseDouble(height.getText().toString());
+                    }catch (Exception e){
+                        idiot = 1;
+                    }
+                    txtAnswer.setText(df.format(answer/2));
+                    image.setImageResource(R.drawable.army);
+
+                }
+                if (spinner.getSelectedItem() == "Choose an object to measure to" || idiot == 1){
+                    objAnswer.setText("Idiots:");
+                    txtAnswer.setText("1");
+                    image.setImageResource(R.drawable.idiot);
+                }
+
             }
         });
     }
