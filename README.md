@@ -1,7 +1,5 @@
 # 441-assignment1
 
-Not quite sure what to do yet
-Ideas:
-unit converter
-word unscrambler
-8ball
+This app is a height converter that takes in the users height in inches and then calculates the same height in a completely useless unit of measurement, such as units of the largest cucumber grown. If there is an error such as no height was inputted or the unit was not selected, the app will display your height in units of idiot. 
+
+The app's main purpose is to get used to the development environment. This is why the background picture for the app is Mr Bean and why the response is displayed in two columns (divided into the result and a picture of the related unit). These are in place to play with how the widgets interact with eachother in the layout scheme, and how I can make future apps with pictures and text. The idea behind the app being a height calculator came from the need for a calculator and the want for it to be entertaining and ultimately useless.
